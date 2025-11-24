@@ -3,6 +3,7 @@
 import { getSupabaseServerClient } from "@/lib/supabase/server"
 import { getDiscordAuthUrl } from "@/lib/discord-auth"
 import { revalidatePath } from "next/cache"
+import { redirect } from "next/navigation"
 
 export async function likeEmoji(emojiId: string) {
   const supabase = await getSupabaseServerClient()
@@ -51,7 +52,7 @@ export async function unlikeEmoji(emojiId: string) {
 
 export async function signInWithDiscord() {
   const authUrl = await getDiscordAuthUrl()
-  return { url: authUrl }
+  redirect(authUrl)
 }
 
 export async function signOut() {

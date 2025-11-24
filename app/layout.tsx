@@ -8,7 +8,7 @@ import "./globals.css"
 const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
-// <CHANGE> Updated metadata for Bumpr Emojis branding
+// Updated metadata for Bumpr Emojis branding
 export const metadata: Metadata = {
   title: "Bumpr Emojis - Discord Emoji Collection",
   description: "Discover, share, and like the best Discord emojis",
@@ -38,9 +38,9 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <body className={`font-sans antialiased`}>
-        {/* <CHANGE> Added global navbar */}
+        {/* Added global navbar */}
         <Navbar />
         {children}
         <Analytics />
