@@ -1,6 +1,6 @@
 export async function getDiscordAuthUrl() {
   const clientId = process.env.NEXT_PUBLIC_DISCORD_CLIENT_ID!
-  const redirectUri = encodeURIComponent(process.env.NEXT_PUBLIC_REDIRECT_URL!)
+  const redirectUri = process.env.NEXT_PUBLIC_REDIRECT_URL!
 
   const discordAuthUrl = new URL("https://discord.com/oauth2/authorize")
   discordAuthUrl.searchParams.set("client_id", clientId)
